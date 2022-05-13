@@ -22,6 +22,7 @@
     "@typegoose/typegoose": "^9.8.1",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "mockingoose": "^2.15.2",
     "mongoose": "^6.3.3"
   }
 }

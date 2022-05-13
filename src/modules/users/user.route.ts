@@ -1,12 +1,12 @@
 import { logger } from "@typegoose/typegoose/lib/logSettings";
-import UserService from "./user.service";
+import {UserService} from "./user.service";
 
 module.exports = function (app) {
-  app.get("/api/users", (req, res) => {
+  app.get("/api/users", async (req, res) => {
     const filter = req.query;
     const userService = new UserService();
     try {
-      res.status(200).send(userService.find({}));
+      res.status(200).send(await userService.find(filter));
     } catch (error) {
       res.status(400).send(error.message);
     }

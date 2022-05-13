@@ -1,5 +1,3 @@
-import UserService from "./modules/users/user.service";
-
 const express = require('express');
 const app = express();
 const port = 3000;

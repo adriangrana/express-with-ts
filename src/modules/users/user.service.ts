@@ -1,5 +1,6 @@
 import  {  UserModel, User } from "../../models/user.model";
 class UserService {
+
   create = async (user: User): Promise<any> => {
     const IModel = new UserModel(user);
     const hasError = IModel.validateSync();
@@ -10,19 +11,11 @@ class UserService {
     }
   };
 
-  find = async (user: User): Promise<Array<User>> => {
-    return await UserModel.findOne({name:"adrian"});
+  find = async (usr: User): Promise<any> => {
+    const user = await UserModel.find(usr).exec();
+    console.log(user);
+    return user
   };
 
-  findAll = async (email: string): Promise<Array<User>> => {
-    return await UserModel.find({});
-  };
-
-  update = async (user: User): Promise<any> => {
-    return await UserModel.updateOne(user);
-  };
-  del = async (user: User): Promise<any> => {
-    return await UserModel.deleteOne(user);
-  };
 }
-export default UserService;
+export {UserService}  ;
