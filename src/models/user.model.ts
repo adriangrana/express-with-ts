@@ -10,15 +10,10 @@ class User {
 }
 const UserModel = getModelForClass(User,{
   schemaOptions: {
-    autoCreate: true,
+    autoCreate: false,
     collection: "users",
     timestamps: true,
-    toJSON: {
-      virtuals: true,
-      transform: (doc, ret) => {
-        delete ret._id;
-      }
-    }
+   
   }
 });
 

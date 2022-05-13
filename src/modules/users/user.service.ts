@@ -1,21 +1,25 @@
-import  {  UserModel, User } from "../../models/user.model";
-class UserService {
+import { User } from "../../models/user.model";
 
+class UserService {
+  
+  userModel: any;
+  constructor(userModel: any) {
+    this.userModel = userModel;
+  }
   create = async (user: User): Promise<any> => {
-    const IModel = new UserModel(user);
+    const IModel = new this.userModel(user);
     const hasError = IModel.validateSync();
     if (hasError) {
-     throw new Error(hasError.message)
+      throw new Error(hasError.message);
     } else {
-     return await IModel.save();
+      return await IModel.save();
     }
   };
 
   find = async (usr: User): Promise<any> => {
-    const user = await UserModel.find(usr).exec();
+    const user = await this.userModel.find(usr).exec();
     console.log(user);
-    return user
+    return user;
   };
-
 }
-export {UserService}  ;
+export { UserService };
