@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "types": ["node", "jest"],
+    "sourceMap": true,
+    "outDir": "dist",
+  },
+  "lib": ["es2015"]
+}
