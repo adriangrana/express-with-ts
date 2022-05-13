@@ -1,2 +1,2 @@
 # express-with-ts
-POC
+POC express - typescript - mongo - jest
